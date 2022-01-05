@@ -11,15 +11,11 @@
     --font-size-xxl: 2rem;
     --break-point-mobile: 32rem;
 }
-#wrapper > header, #wrapper > footer {
+#wrapper > header, #wrapper > footer, #wrapper > main, #wrapper > nav {
     --main-bg-color:#1e2124;
     --main-fg-color:whitesmoke;
 }
 
-#wrapper > nav {
-    --main-bg-color:#2e3136;
-    --main-fg-color:whitesmoke;
-}
 
 button {
     --main-bg-color:#2e3136

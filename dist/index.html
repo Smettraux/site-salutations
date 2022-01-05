@@ -9,23 +9,26 @@
     <title>Générateur de salutations</title>
 </head>
 <div id="wrapper" data-media="desktop">
-    <header>
-        <h1>Générateur de salutations</h1>
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__title">Salutations</h1>
+            <nav class="header__nav">
+                <a href="https://www.bottesecrete.agency/" id="bs-home">Botte secrète</a>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ui-button></ui-button>
-        <ul class="nav">
-            <li><a href="https://www.bottesecrete.agency/">Botte secrète</a></li>
-            <li><a href="#">Partager</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section class="page">
-            
-        </section>
+    <main class="main">
+        <div class="container">
+            <h2 class="greeting" id="greeting">Mes plus sincères salutations</h2>
+        </div>
+        <div class="copy-btn">
+            <button id="copy"><span>Copier </span><span class="icon-copy"></span></button >
+            <button id="copied" class="hidden"><span>Copié </span><span class="icon-clipboard"></span></button>
+        </div>
     </main>
-    <footer class="footer">
-    </footer>
+    <nav class="shuffle shuffle--1" id="link-shuffle" data-link="shuffle" onClick="event.preventDefault();">
+        <ui-button id="shuffle__button" class="icon-loop2"></ui-button>
+    </nav>
 </div>
 <script src="bundle.js"></script>
 </body>
