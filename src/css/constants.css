@@ -10,13 +10,10 @@
     --font-size-xl: 1.5rem;
     --font-size-xxl: 2rem;
     --break-point-mobile: 32rem;
+    --transparent: opacity(0);
+
 }
-#wrapper > header, #wrapper > footer, #wrapper > main, #wrapper > nav {
+#wrapper {
     --main-bg-color:#1e2124;
     --main-fg-color:whitesmoke;
-}
-
-
-button {
-    --main-bg-color:#2e3136
 }
