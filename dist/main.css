@@ -117,11 +117,18 @@ h1 {
   width: 100%;
   text-align: right;
   padding: 2rem;
+
+}
+
+.animate{
+    transform: rotateZ(360deg);
+    transition: transform 0.25s;
 }
 
 .icon-loop2 {
   font-size: 4rem;
   color: var(--main-fg-color);
+  display: inline-block;
 }
 
 .icon-copy {
@@ -139,6 +146,7 @@ button {
   border-radius: 0.5em;
   font-size: 2rem;
 }
+
 
 .copy-btn {
   position: relative;
@@ -198,9 +206,6 @@ button {
   transform: translateZ(-25px) rotateX(-90deg);
 }
 
-#shuffle__button {
-    /* border: 5px solid red; */
-}
 
 #bs-home span{
     display: inline-block;
@@ -323,7 +328,7 @@ button {
     url('fonts/icomoon.svg?5d8cqc#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: inline-block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -333,7 +338,7 @@ button {
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
-  text-transform: none;
+  /* text-transform: none; */
   line-height: 1;
 
   /* Better Font Rendering =========== */

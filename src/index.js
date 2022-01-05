@@ -2,7 +2,6 @@ import 'css/main.css';
 import 'css/icomoon.css';
 import 'css/constants.css';
 
-
 const { contrastColor } = require('contrast-color');
 
 console.log('Hello World!');
@@ -24,8 +23,6 @@ function animateOnHoverOut() {
   document.getElementById('shuffle__button').style.fontSize = "4rem";
 }
 
-
-
 function shuffle() {
   //select random from the list of greetings
   let greeting;
@@ -46,13 +43,20 @@ function shuffle() {
   //reset the copy button
   document.getElementById('copy').checked = false;
 
+  //generate a background to apply to the CSS var & a contrast color
   let w = document.querySelector('#wrapper');
   let color = materialColor();
-
   const contrast = contrastColor({ bgColor: color });
 
-  w.style.setProperty('--main-bg-color', color);
-  w.style.setProperty('--main-fg-color', contrast);
+
+  w.style.setProperty('--main-bg-color', color);//apply the background color
+  w.style.setProperty('--main-fg-color', contrast);//apply the contrast color
+
+  //animate the shuffle button on click
+  document.getElementById('shuffle__button').classList.add('animate');
+  setTimeout(function() {
+    document.getElementById('shuffle__button').classList.remove('animate');
+  },260);
 
 }
 
@@ -66,7 +70,16 @@ function copyToClipboard() {
   document.getElementById('copy').checked = true;// keep the checkbox checked
 }
 
-//vars ********************************************************************
+function pickRandomProperty(obj) {
+  var result;
+  var count = 0;
+  for (var prop in obj)
+    if (Math.random() < 1 / ++count)
+      result = prop;
+  return result;
+}
+
+//arrays ********************************************************************
 
 let greetings = [
   "Mes plus sincères salutations",
@@ -440,13 +453,6 @@ let greetings = [
     return newColor;
   }
 
-  function pickRandomProperty(obj) {
-    var result;
-    var count = 0;
-    for (var prop in obj)
-      if (Math.random() < 1 / ++count)
-        result = prop;
-    return result;
-  }
+
 
 
