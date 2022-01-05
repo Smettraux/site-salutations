@@ -28,10 +28,12 @@ function shuffle() {
 
   //display the greeting
   document.getElementById('greeting').innerHTML = greeting;
-  document.getElementById('copied').style.display = "none";
-  document.getElementById('copy').style.display = "block";
 
-  document.getElementById('shuffle__button').style.transform = "rotate(180deg)";
+  //animate the shuffle button
+  document.getElementById('shuffle__button').style.transform = "rotate(30deg)";
+
+  //reset the copy button
+  document.getElementById('copy').checked = false;
 }
 
 function copyToClipboard() {
@@ -41,9 +43,7 @@ function copyToClipboard() {
   window.getSelection().addRange(range); // to select text
   document.execCommand("copy");
   window.getSelection().removeAllRanges();// to deselect
-
-  document.getElementById('copy').style.display = "none";
-  document.getElementById('copied').style.display = "block";
+  document.getElementById('copy').checked = true;// keep the checkbox checked
 }
 
 //vars ********************************************************************
@@ -87,5 +87,7 @@ let greetings = [
   "Veuillez agréer, Madame, Monsieur, mes meilleures salutations.",
   "Sportivement",
   "Vaccinalement",
-  "Vers l'infini, et au-delà!"]; //array of greetings
+  "Vers l'infini, et au-delà!",
+  "À la revoyure !",
+  "À bientôt, si c'est pas avant."]; //array of greetings
 
