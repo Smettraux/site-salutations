@@ -4,23 +4,22 @@ import 'css/constants.css';
 
 const { contrastColor } = require('contrast-color');
 
-console.log('Hello World!');
-
 //calls *******************************************************************
 
-document.getElementById('copy').addEventListener('click', copyToClipboard);
+document.getElementById('copy__button').addEventListener('click', copyToClipboard);
 document.getElementById('shuffle__button').addEventListener('click', shuffle);
-document.getElementById('shuffle__button').addEventListener('mouseenter', animateOnHoverIn);
-document.getElementById('shuffle__button').addEventListener('mouseleave', animateOnHoverOut);
+document.getElementById('shuffle__button').addEventListener('mouseover', rotate);
+document.getElementById('about').addEventListener('click', toggleCard);
+document.getElementById('close__button').addEventListener('click', toggleCard);
 
 //functions ***************************************************************
 
-function animateOnHoverIn() {
-  document.getElementById('shuffle__button').style.fontSize = "5rem";
-}
-
-function animateOnHoverOut() {
-  document.getElementById('shuffle__button').style.fontSize = "4rem";
+function rotate() {
+ //animate the shuffle button on click
+ document.getElementById('spinner').classList.add('animate');
+ setTimeout(function() {
+   document.getElementById('spinner').classList.remove('animate');
+ },260);
 }
 
 function shuffle() {
@@ -30,18 +29,17 @@ function shuffle() {
   temp = greeting;
   greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  if(greeting === temp) {
+  if(greeting == temp) {
     shuffle();
   }
 
   //display the greeting
   document.getElementById('greeting').innerHTML = greeting;
 
-  //animate the shuffle button
-  document.getElementById('shuffle__button').style.transform = "rotateX";
+
 
   //reset the copy button
-  document.getElementById('copy').checked = false;
+  document.getElementById('copy__button').innerHTML = 'Copier<span id="copy__icon" class="icon-copy"></span>';
 
   //generate a background to apply to the CSS var & a contrast color
   let w = document.querySelector('#wrapper');
@@ -52,11 +50,7 @@ function shuffle() {
   w.style.setProperty('--main-bg-color', color);//apply the background color
   w.style.setProperty('--main-fg-color', contrast);//apply the contrast color
 
-  //animate the shuffle button on click
-  document.getElementById('shuffle__button').classList.add('animate');
-  setTimeout(function() {
-    document.getElementById('shuffle__button').classList.remove('animate');
-  },260);
+
 
 }
 
@@ -67,7 +61,9 @@ function copyToClipboard() {
   window.getSelection().addRange(range); // to select text
   document.execCommand("copy");
   window.getSelection().removeAllRanges();// to deselect
-  document.getElementById('copy').checked = true;// keep the checkbox checked
+
+  document.getElementById("copy__button").innerHTML = "<span id='copied'></span>";
+  document.getElementById("copied").classList.add("icon-checkmark");
 }
 
 function pickRandomProperty(obj) {
@@ -77,6 +73,12 @@ function pickRandomProperty(obj) {
     if (Math.random() < 1 / ++count)
       result = prop;
   return result;
+}
+
+function toggleCard(){
+  console.log("openCard");
+  let toggle = document.getElementById('toggle')
+  toggle.style.display === "none" ? toggle.style.display = "block" : toggle.style.display = "none";
 }
 
 //arrays ********************************************************************

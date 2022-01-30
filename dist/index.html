@@ -8,39 +8,36 @@
     <link rel="stylesheet" href="main.css">
     <title>Générateur de salutations</title>
 </head>
+<div id="toggle" class="card_wrapper" style="display: none">
+    <div class="card">
+        <card-button id="close__button">X</card-button>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis a, nunc tellus tortor. Sit feugiat fermentum a eleifend nulla blandit venenatis aenean nulla.
+
+            Eget nunc, turpis orci, maecenas eu, sed tincidunt et. Nulla vitae semper tortor ut in imperdiet egestas venenatis. Neque pulvinar sed amet arcu at sem platea ut.
+        </p>
+        <card-button><a href="https://www.bottesecrete.agency/">bottesecrete.agency<span class="icon-link"></span></a></card-button>
+    </div>
+
+</div>
 <div id="wrapper" data-media="desktop">
     <header class="header">
         <div class="header__inner">
             <h1 class="header__title">Salutations</h1>
-            <nav class="header__nav">
-                <a href="https://www.bottesecrete.agency/" id="bs-home">
-                    <span>B</span>
-                    <span>o</span>
-                    <span>t</span>
-                    <span>t</span>
-                    <span>e</span>
-                    <span> </span>
-                    <span>S</span>
-                    <span>e</span>
-                    <span>c</span>
-                    <span>r</span>
-                    <span>è</span>
-                    <span>t</span>
-                    <span>e</span></a>
-            </nav>
+            <h1 class="header__title">Botte Secrète</h1>
         </div>
     </header>
     <main class="main">
         <div class="container">
             <h2 class="greeting" id="greeting">Mes plus sincères salutations</h2>
         </div>
-        <div class="copy-btn">
-            <input type="checkbox" id="copy"/>
-            <label class="btn" for="copy"></label>
-        </div>
+
     </main>
-    <nav class="shuffle shuffle--1" id="link-shuffle" data-link="shuffle" onClick="event.preventDefault();">
-        <ui-button id="shuffle__button" class="icon-loop2"></ui-button>
+    <nav>
+        <hr>
+        <button id="copy__button">Copier<span id="copy__icon" class="icon-copy"></span></button>
+        <button id="shuffle__button">Générer une autre formule<span class="pad"></span><spin id="spinner"><span class="icon-spinner11"></span></spin></button>
+        <div id="about" class="about">A propos<span class="icon-information-solid"></span></div>
     </nav>
 </div>
 <script src="bundle.js"></script>

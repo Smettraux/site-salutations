@@ -19,6 +19,8 @@
   box-sizing: border-box;
   background-color: var(--main-bg-color);
   color: var(--main-fg-color);
+  border: 0;
+  font-family: inherit;
 }
 
 html,
@@ -33,24 +35,11 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  /* vertical-align: baseline; */
-  text-decoration: none;
+  font-family: "Questrial", sans-serif;
 }
 
 .header {
   width: 100%;
-  /* position: absolute;
-    top: 0;
-    left: 0;
-    right: 0; */
   text-align: left;
   padding-top: 0.7em;
   padding-left: 0.7em;
@@ -61,7 +50,6 @@ html {
 
 h1 {
   display: block;
-  font-size: 2em;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
@@ -69,12 +57,13 @@ h1 {
   font-weight: bold;
 }
 
+
 .header__title {
-  font-size: 1.1rem;
+  font-size: 0.75em;
 }
 
 .header__inner {
-  border-top: 0.15rem solid var(--main-fg-color);
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -101,6 +90,8 @@ h1 {
   color: var(--main-fg-color);
 }
 
+
+
 .greeting {
   display: block;
   width: 100%;
@@ -110,14 +101,23 @@ h1 {
   text-rendering: geometricPrecision;
   font-weight: 800;
   padding: 1rem;
+  text-align: center;
+}
+
+.about{
+  position: fixed;
+  bottom: 5vh;
+  right: 10vw;
+}
+
+.about:hover{
+  cursor: pointer;
 }
 
 .shuffle {
   display: inline-block;
   width: 100%;
   text-align: right;
-  padding: 2rem;
-
 }
 
 .animate{
@@ -125,149 +125,126 @@ h1 {
     transition: transform 0.25s;
 }
 
-.icon-loop2 {
-  font-size: 4rem;
-  color: var(--main-fg-color);
-  display: inline-block;
-}
-
-.icon-copy {
-  font-size: 2rem;
-  color: var(--main-fg-color);
-}
-
-.icon-clipboard {
-  font-size: 2rem;
-  color: var(--main-fg-color);
-}
-
 button {
-  padding: 0.5em;
-  border-radius: 0.5em;
-  font-size: 2rem;
-}
-
-
-.copy-btn {
-  position: relative;
-  display: inline-flex;
-  width: 180px;
-  height: 55px;
-  margin: 0 15px;
-  perspective: 1000px;
-}
-
-#copy {
-  font-size: 19px;
-  letter-spacing: 1px;
-  transform-style: preserve-3d;
-  transform: translateZ(-25px);
-  transition: transform 0.25s;
-  transform-origin: center bottom;
-}
-#copy:before {
-  position: absolute;
-  content: "COPIER";
-  height: 55px;
-  width: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 5px solid var(--main-fg-color);;
+  display:inline-block;
+  padding:0.2em 0.6em;
+  margin:0.1em;
   box-sizing: border-box;
+  text-decoration:none;
   border-radius: 5px;
-  font-weight: bold;
-}
-#copy:after {
-  position: absolute;
-  content: "COPIÉ";
-  height: 55px;
-  width: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 5px solid black;
-  box-sizing: border-box;
-  border-radius: 5px;
-  font-weight: bold;
-}
-#copy:before {
+  border: none;
+  font-weight:600;
+  font-size: 0.75em;
   color: var(--main-bg-color);
-  background: var(--main-fg-color);
-  transform: rotateY(0deg) translateZ(25px);
+  background-color: var(--main-fg-color);
+  text-align:center;
+  text-align:center;
+  position:relative;
+  height: 24px;
 }
-#copy:after {
-  color: var(--main-fg-color);
-  border: 5px solid var(--main-fg-color);
-  transform: rotateX(90deg) translateZ(25px);
-}
-
-#copy:checked {
-  transform: translateZ(-25px) rotateX(-90deg);
-}
-
-
-#bs-home span{
-    display: inline-block;
-    animation: wave-text 10s ease-in-out infinite;
-    letter-spacing: -.06em;
+.card_wrapper{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index:100;
 }
 
-    #bs-home > span:nth-of-type(1){
-        animation-delay: 0.1s;
-    }
-    #bs-home > span:nth-of-type(2){
-        animation-delay: 0.2s;
-    }
-    #bs-home > span:nth-of-type(3){
-        animation-delay: 0.3s;
-    }
-    #bs-home > span:nth-of-type(4){
-        animation-delay: 0.4s;
-    }
-    #bs-home > span:nth-of-type(5){
-        animation-delay: 0.5s;
-    }
-     #bs-home > span:nth-of-type(6){
-        animation-delay: 0.6s;
-    }
-     #bs-home > span:nth-of-type(7){
-        animation-delay: 0.7s;
-    }
-     #bs-home > span:nth-of-type(8){
-        animation-delay: 0.8s;
-    }
-     #bs-home > span:nth-of-type(9){
-        animation-delay: 0.9s;
-    }
-     #bs-home > span:nth-of-type(10){
-        animation-delay: 1s;
-    }
-     #bs-home > span:nth-of-type(11){
-        animation-delay: 1.1s;
-    }
-     #bs-home > span:nth-of-type(12){
-        animation-delay: 1.2s;
-    }
-     #bs-home > span:nth-of-type(13){
-        animation-delay: 1.3s;
-    }
-     #bs-home > span:nth-of-type(14){
-        animation-delay: 1.4s;
-    }
-
-
-@keyframes wave-text{
-    00%{
-      transform: translateY(0em);
-    }
-    5%{
-      transform: translateY(-0.6em);
-    }
-    10%{
-      transform: translateY(0em);
-    }
+card-button {
+  display:inline-block;
+  padding:0.2em 0.6em;
+  margin:0.1em;
+  box-sizing: border-box;
+  text-decoration:none;
+  border-radius: 5px;
+  border: none;
+  font-weight:600;
+  font-size: 0.75em;
+  color: whitesmoke;
+  background-color: #1e2124;
+  text-align:center;
+  text-align:center;
+  position:relative;
+  height: 24px;
   }
+
+card-button > a {
+  background-color: transparent;
+
+}
+
+card-button:hover{
+  cursor: pointer;
+}
+
+#close__button{
+  padding-top: 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.card {
+  max-height: 50%;
+  position: relative;
+  padding: 3rem;
+  background: #fff;
+  max-width: 500px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+
+}
+
+.card > h1 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    color:#1e2124;
+    background-color: transparent;
+}
+
+.card > p {
+    margin: 0 0 2rem 0;
+    font-size: 0.75rem;
+    color: #1e2124;
+    background-color: transparent;
+}
+
+#shuffle-button {
+  padding-top: 5px;
+}
+
+
+button:hover{
+  cursor: pointer;
+}
+
+.pad{
+  margin-right: 0.75rem;
+}
+
+#spinner{
+  display: inline-block;
+  background-color: var(--main-fg-color);
+}
+
+hr {
+  color: var(--main-fg-color);
+  border-top: 2px solid var(--main-fg-color);
+  overflow: visible;
+  text-align: center;
+  margin: 0 auto 1rem auto;
+  height: 5px;
+  width: 80vw;
+}
+
+
 
 @media (min-width: 780px) {
   .header {
@@ -283,13 +260,13 @@ button {
   grid-area: main;
   display: flex;
   flex-shrink: initial;
-  justify-content: space-evenly;
-  padding-top: 3rem;
+  align-items: center;
 }
 
 #wrapper > nav {
   grid-area: nav;
   overflow: hidden;
+  padding: 0 10vw 0 10vw;
 }
 
 #wrapper {
@@ -299,8 +276,8 @@ button {
 }
 
 #wrapper[data-media="desktop"] {
-  grid-template-columns: 1fr 15fr;
-  grid-template-rows: 1fr 11fr 3fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 7fr 4fr;
   grid-template-areas:
     "header   header"
     "main   main"
@@ -309,7 +286,7 @@ button {
 
 #wrapper[data-media="mobile"] {
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 7fr 1fr;
+  grid-template-rows: 1fr 22fr 18fr;
   grid-template-areas:
     "header"
     "main"
@@ -346,23 +323,53 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-copy:before {
+.icon-information-solid:before {
+  content: "\e902";
+  padding-left: 5px;
+  color: var(--main-fg-color);
+  vertical-align: middle;
+}
+.icon-information-outline:before {
   content: "\e900";
+  padding-left: 5px;
+  color: var(--main-fg-color);
+  vertical-align: middle;
 }
-.icon-copy1:before {
-  content: "\e92c";
+.icon-copy:before {
+  content: "\e901";
+  float: right;
+  padding-left:0.75rem;
+  padding-top:2px;
+  color: var(--main-bg-color);
 }
-.icon-paste:before {
-  content: "\e92d";
+.icon-files-empty:before {
+  content: "\e925";
+  float: right;
+  padding-left:0.75rem;
+  padding-top:2px;
+  color: var(--main-bg-color);
 }
-.icon-clipboard:before {
-  content: "\e9b8";
+.icon-spinner11:before {
+  content: "\e984";
+  float: right;
+  color: var(--main-bg-color);
+  margin-bottom: -3px;
 }
-.icon-loop2:before {
-  content: "\ea2e";
+.icon-link:before {
+  content: "\e9cb";
+  float: right;
+  padding-left:0.75rem;
+  padding-top:2px;
+  color: var(--main-fg-color);
 }
-.icon-new-tab:before {
-  content: "\ea7e";
+.icon-checkmark:before {
+  content: "\ea10";
+  float: right;
+  font-size:0.8rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: -5px;
+  color: var(--main-bg-color);
 }
 
 /*!*****************************************************************************************************!*\

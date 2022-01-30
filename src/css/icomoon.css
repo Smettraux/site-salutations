@@ -25,21 +25,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-copy:before {
+.icon-information-solid:before {
+  content: "\e902";
+  padding-left: 5px;
+  color: var(--main-fg-color);
+  vertical-align: middle;
+}
+.icon-information-outline:before {
   content: "\e900";
+  padding-left: 5px;
+  color: var(--main-fg-color);
+  vertical-align: middle;
 }
-.icon-copy1:before {
-  content: "\e92c";
+.icon-copy:before {
+  content: "\e901";
+  float: right;
+  padding-left:0.75rem;
+  padding-top:2px;
+  color: var(--main-bg-color);
 }
-.icon-paste:before {
-  content: "\e92d";
+.icon-files-empty:before {
+  content: "\e925";
+  float: right;
+  padding-left:0.75rem;
+  padding-top:2px;
+  color: var(--main-bg-color);
 }
-.icon-clipboard:before {
-  content: "\e9b8";
+.icon-spinner11:before {
+  content: "\e984";
+  float: right;
+  color: var(--main-bg-color);
+  margin-bottom: -3px;
 }
-.icon-loop2:before {
-  content: "\ea2e";
+.icon-link:before {
+  content: "\e9cb";
+  float: right;
+  padding-left:0.75rem;
+  padding-top:2px;
+  color: var(--main-fg-color);
 }
-.icon-new-tab:before {
-  content: "\ea7e";
+.icon-checkmark:before {
+  content: "\ea10";
+  float: right;
+  font-size:0.8rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: -5px;
+  color: var(--main-bg-color);
 }
