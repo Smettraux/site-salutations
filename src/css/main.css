@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 
 :root {
-  font-size: 16px;
+  font-size: 24px;
   font-family: "Questrial", sans-serif;
 }
 
@@ -136,7 +136,7 @@ button {
   text-align:center;
   text-align:center;
   position:relative;
-  height: 24px;
+  height: 2em;
 }
 .card_wrapper{
   background-color: rgba(0, 0, 0, 0.3);
@@ -163,7 +163,7 @@ card-button {
   text-align:center;
   text-align:center;
   position:relative;
-  height: 24px;
+  height: 2em;
   }
 
 card-button > a {
@@ -177,11 +177,13 @@ card-button:hover{
 }
 
 #close__button{
-  padding-top: 6px;
+  padding-top: 0.5em;
   border-radius: 50%;
   position: absolute;
   top: 1em;
   right: 1em;
+  height: 35px;
+  width: 35px;
 }
 
 .card {
@@ -195,7 +197,6 @@ card-button:hover{
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
-
 }
 
 .card > h1 {
