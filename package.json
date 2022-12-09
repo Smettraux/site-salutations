@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "contrast-color": "^1.0.1",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "regenerator-runtime": "^0.13.11"
   }
 }

@@ -1,6 +1,7 @@
 import "css/main.css";
 import "css/icomoon.css";
 import "css/constants.css";
+import 'regenerator-runtime/runtime'
 
 const { contrastColor } = require("contrast-color");
 const API_KEY = require("/config");
