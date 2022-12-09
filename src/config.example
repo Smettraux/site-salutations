@@ -1,0 +1,3 @@
+SHEETS_API_KEY='' // Google Sheets API Key you should get on your google cloud console
+SHEET_ID = ''  //the ID of your published Google Sheet
+
