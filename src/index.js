@@ -2,9 +2,16 @@ import "css/main.css";
 import "css/icomoon.css";
 import "css/constants.css";
 import 'regenerator-runtime/runtime'
+import 'particles.js/particles.js'
+
 
 const { contrastColor } = require("contrast-color");
 const API_KEY = require("/config");
+
+particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+
 
 //fetch function to populate the list of greetings from googlesheets api and populate the greetings array
 
@@ -22,10 +29,8 @@ async function fetchFromSheet() {
       greetings.push(data.values[0][i]);
     }
   }
-
   console.log(greetings);
 }
-
 fetchFromSheet();
 
 //calls *******************************************************************
@@ -69,10 +74,12 @@ function shuffle() {
     'Copier<span id="copy__icon" class="icon-copy"></span>';
 
   //generate a background to apply to the CSS var & a contrast color
+  let body = document.querySelector("body");
   let w = document.querySelector("#wrapper");
   let color = materialColor();
   const contrast = contrastColor({ bgColor: color });
 
+  body.style.setProperty("--main-bg-color", color); //apply the background color
   w.style.setProperty("--main-bg-color", color); //apply the background color
   w.style.setProperty("--main-fg-color", contrast); //apply the contrast color
 }
