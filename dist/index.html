@@ -8,38 +8,44 @@
     <link rel="stylesheet" href="main.css">
     <title>Générateur de salutations</title>
 </head>
-<div id="toggle" class="card_wrapper" style="display: none">
-    <div class="card">
-        <card-button id="close__button">X</card-button>
-        <h1>Vous manquez d’inspiration lors de vos salutations par e-mail ?</h1>
-        <p>Nous avons créé ce site internet pour vous accompagner dans ces moments afin que vous puissiez trouver des inspirations.
-            <br>
-            Ce site a été créé par l’agence digitale Botte Secrète.
-        </p>
-        <card-button><a href="https://www.bottesecrete.agency/" style="text-decoration: none">bottesecrete.agency<span class="icon-link"></span></a></card-button>
+<body>
+<div id="particles-js"></div>
+    <div id="toggle" class="card_wrapper" style="display: none">
+        <div class="card">
+            <card-button id="close__button">X</card-button>
+            <h1>Vous manquez d’inspiration lors de vos salutations par e-mail ?</h1>
+            <p>Nous avons créé ce site internet pour vous accompagner dans ces moments afin que vous puissiez trouver des inspirations.
+                <br>
+                Ce site a été créé par l’agence digitale Botte Secrète.
+            </p>
+            <card-button><a href="https://www.bottesecrete.agency/" style="text-decoration: none">bottesecrete.agency<span class="icon-link"></span></a></card-button>
+        </div>
+
     </div>
+    <div id="wrapper" data-media="desktop">
+        <header class="header">
+            <div class="header__inner">
+                <h1 class="header__title">Salutations</h1>
+                <h1 class="header__title"><a href="https://www.bottesecrete.agency" style="text-decoration: none">Botte Secrète</a></h1>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <h2 class="greeting" id="greeting">Mes plus sincères salutations.</h2>
+            </div>
 
-</div>
-<div id="wrapper" data-media="desktop">
-    <header class="header">
-        <div class="header__inner">
-            <h1 class="header__title">Salutations</h1>
-            <h1 class="header__title"><a href="https://www.bottesecrete.agency" style="text-decoration: none">Botte Secrète</a></h1>
-        </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <h2 class="greeting" id="greeting">Mes plus sincères salutations.</h2>
-        </div>
-
-    </main>
-    <nav>
-        <hr>
-        <button id="copy__button">Copier<span id="copy__icon" class="icon-copy"></span></button>
-        <button id="shuffle__button">Générer une autre formule<span class="pad"></span><spin id="spinner"><span class="icon-spinner11"></span></spin></button>
-        <div id="about" class="about">A propos<span class="icon-information-solid"></span></div>
-    </nav>
-</div>
+        </main>
+        <nav>
+            <hr>
+            <button id="copy__button">Copier<span id="copy__icon" class="icon-copy"></span></button>
+            <button id="shuffle__button">Générer une autre formule<span class="pad"></span><spin id="spinner"><span class="icon-spinner11"></span></spin></button>
+            <span class="switcher switcher-1" >
+                <input type="checkbox" id="switcher-1" checked>
+                <label for="switcher-1"></label>
+            </span>
+            <div id="about" class="about">A propos<span class="icon-information-solid"></span></div>
+        </nav>
+    </div>
 <script src="bundle.js"></script>
 </body>
 </html>
