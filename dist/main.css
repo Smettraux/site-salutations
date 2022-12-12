@@ -46,7 +46,7 @@ html {
   padding-top: 0.7em;
   padding-left: 0.7em;
   padding-right: 0.7em;
-  z-index: 20;
+  z-index: 3;
   font-size: 1rem;
 }
 
@@ -70,10 +70,12 @@ h1 {
 }
 
 .header__inner {
-
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
 
 }
 
@@ -309,6 +311,107 @@ hr {
   top:0;
   z-index: 0;
 }
+
+body span.switcher {
+  /* position: relative; */
+  position: fixed;
+  bottom: 2vh;
+  left: 10vw;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 20px 0;
+}
+body span.switcher input {
+  appearance: none;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--main-fg-color);
+  outline: none;
+  font-family: "Questrial", sans-serif;
+  font-weight: bold;
+}
+body span.switcher input:before, body span.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main-bg-color);
+}
+body span.switcher input:before {
+  content: 'ON';
+  left: 45px;
+}
+body span.switcher input:after {
+  content: 'OFF';
+  right: 40px;
+}
+body span.switcher label {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  border-radius: 20px;
+}
+body span.switcher.switcher-1 input {
+  transition: 0.25s -0.1s;
+}
+body span.switcher.switcher-1 input:checked {
+  background-color: var(--main-bg-color);
+}
+body span.switcher.switcher-1 input:checked:before {
+  color: var(--main-bg-color);
+  transition: color 0.5s 0.2s;
+}
+body span.switcher.switcher-1 input:checked:after {
+  color: var(--main-fg-color);
+  transition: color 0.5s;
+}
+body span.switcher.switcher-1 input:checked + label {
+  left: 10px;
+  right: 100px;
+  background: var(--main-fg-color);
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+body span.switcher.switcher-1 input:not(:checked) {
+  background: var(--main-fg-color);
+  transition: background 0.5s -0.1s;
+}
+body span.switcher.switcher-1 input:not(:checked):before {
+  color: var(--main-bg-color);
+  transition: color 0.5s;
+}
+body span.switcher.switcher-1 input:not(:checked):after {
+  color: var(--main-fg-color);
+  transition: color 0.5s 0.2s;
+}
+body span.switcher.switcher-1 input:not(:checked) + label {
+  left: 100px;
+  right: 10px;
+  background: var(--main-bg-color);
+  transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+}
+
+@keyframes turn-on {
+  0% {
+    left: 100%;
+ }
+  100% {
+    left: 0%;
+ }
+}
+
+@keyframes turn-off {
+  0% {
+    right: 100%;
+ }
+  100% {
+    right: 0%;
+ }
+}
+
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/css/icomoon.css ***!
   \***************************************************************************************************/
@@ -405,9 +508,5 @@ hr {
     --break-point-mobile: 32rem;
     --transparent: opacity(0);
 
-}
-#wrapper {
-    --main-bg-color:#1e2124;
-    --main-fg-color:whitesmoke;
 }
 

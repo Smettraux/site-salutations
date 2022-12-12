@@ -29,7 +29,6 @@ async function fetchFromSheet() {
       greetings.push(data.values[0][i]);
     }
   }
-  console.log(greetings);
 }
 fetchFromSheet();
 
@@ -44,8 +43,21 @@ document
   .addEventListener("mouseover", rotate);
 document.getElementById("about").addEventListener("click", toggleCard);
 document.getElementById("close__button").addEventListener("click", toggleCard);
+document.getElementById("switcher-1").addEventListener("click", toggleSnow);
+
 
 //functions ***************************************************************
+
+function toggleSnow() {
+  let switcher = document.getElementById("switcher-1");
+  let snow = document.getElementById("particles-js");
+
+  if (switcher.checked == true){
+    snow.style.zIndex = "0";
+  } else {
+    snow.style.zIndex = "-5";
+  }
+}
 
 function rotate() {
   //animate the shuffle button on click
@@ -147,7 +159,6 @@ let greetings = [
   "Veuillez croire à mon meilleur souvenir.",
   "Veuillez trouver ici l’assurance de mon amitié.",
   "Amitiés.",
-  "Veuillez trouver ici l'assurance de mon amitié.",
   "Salutations distinguées.",
   "Semper Fidelis.",
   "Je vous prie de plésèfer, Madame, Monsieur, mes vrissèmes très croumibes.",
