@@ -59,7 +59,6 @@ h1 {
   color: var(--main-fg-color);
 }
 
-
 .header__title {
   font-size: 0.75em;
 }
@@ -70,8 +69,6 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
-
 }
 
 .header__nav {
@@ -92,8 +89,6 @@ h1 {
   align-items: center;
   color: var(--main-fg-color);
 }
-
-
 
 .greeting {
   display: block;
@@ -222,10 +217,17 @@ card-button:hover{
     background-color: transparent;
 }
 
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 2rem 0;
+}
+
 #shuffle-button {
   padding-top: 5px;
 }
-
 
 button:hover{
   cursor: pointer;
@@ -248,14 +250,6 @@ hr {
   margin: 0 auto 1rem auto;
   height: 5px;
   width: 80vw;
-}
-
-
-
-@media (min-width: 780px) {
-  .header {
-    font-size: 1.333rem;
-  }
 }
 
 #wrapper > header {
@@ -310,7 +304,7 @@ hr {
 body span.switcher {
   /* position: relative; */
   position: fixed;
-  bottom: 2vh;
+  bottom: 1.5vh;
   left: 10vw;
   width: 200px;
   height: 50px;
@@ -405,4 +399,31 @@ body span.switcher.switcher-1 input:not(:checked) + label {
   100% {
     right: 0%;
  }
+}
+
+@media screen and (min-width: 780px) {
+  .header {
+    font-size: 1.333rem;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .buttons {
+    font-size: .75rem;
+  }
+
+  .card h1{
+    font-size: 1rem;
+    text-justify: auto;
+  }
+
+  .card p {
+    margin-bottom: .5rem;
+  }
+
+  #about{
+    font-size: .75rem;
+    bottom: 2rem;
+  }
+
 }

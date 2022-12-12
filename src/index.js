@@ -4,14 +4,20 @@ import "css/constants.css";
 import 'regenerator-runtime/runtime'
 import 'particles.js/particles.js'
 
-
 const { contrastColor } = require("contrast-color");
+const greetingsJSON = require("./data/greetings.json");
 const API_KEY = require("/config");
 
+//call the particles.js library
 particlesJS.load('particles-js', 'assets/particles.json', function() {
   console.log('callback - particles.js config loaded');
 });
 
+//arrays ********************************************************************
+let greetings = [];
+for (let i = 0; i < greetingsJSON[0].length; i++) { 
+  greetings.push(greetingsJSON[0][i]);
+}
 
 //fetch function to populate the list of greetings from googlesheets api and populate the greetings array
 
@@ -124,52 +130,7 @@ function toggleCard() {
     : (toggle.style.display = "none");
 }
 
-//arrays ********************************************************************
 
-let greetings = [
-  "Mes plus sincères salutations.",
-  "Tchô, bonne!",
-  "Je vous prie de bien vouloir iller, Madame, Monsieur, mes tes éminemment stantes.",
-  "Meilleures salutations.",
-  "Je vous prie de bien vouloir recevoir mes plus respectueuses salutations.",
-  "Cordialement.",
-  "Je vous prie d’agréer, Monsieur, mes salutations les plus dévouées.",
-  "Je vous prie d’agréer, Madame, mes salutations les plus distinguées.",
-  "Veuillez croire, Madame/Monsieur, en l’expression de mes sentiments les plus sincères.",
-  "Bien à toi.",
-  "Bien à vous.",
-  "Je vous prie d’agréer mes meilleures salutations.",
-  "Veuillez recevoir mes salutations distinguées.",
-  "Au plaisir et amicalement.",
-  "Je vous prie de croire, Madame, Monsieur, à ma considération distinguée.",
-  "Veuillez recevoir, Madame, Monsieur, l'assurance de mes sincères salutations",
-  "Je vous prie d'agréer mes plus respectueuses salutations.",
-  "Veuillez recevoir l'assurance de ma considération distinguée.",
-  "Avec mes respectueux hommages, je vous prie d’agréer, Madame, Monsieur, l’expression de ma considération la plus distinguée.",
-  "Je vous prie d’agréer, Monsieur, l’assurance de mon profond respect.",
-  "Nous vous prions de croire, Monsieur, à l'expression de nos sentiments les plus dévoués.",
-  "Veuillez croire, cher Monsieur, à mes sentiments cordiaux et respectueux.",
-  "Veuillez agréer, Madame, Monsieur, l’expression de mes sentiments respectueux.",
-  "Cordialement vôtre.",
-  "Je vous prie de croire, cher Prince/chère Princesse, en l'assurance de ma plus haute considération.",
-  "En vous souhaitant cordialement une excellente journée.",
-  "Je vous prie de bien vouloir agréer, Madame la marquise/ Monsieur le marquis, l'expression de mes honnêtes et respectueuses salutations.",
-  "Je vous prie de bien vouloir croire, cher Comte/ chère Comtesse, en l'assurance de ma considération.",
-  "Je vous prie de bien vouloir agréer, Madame la Baronne/ Monsieur le Baron, l'expression de mes honnêtes et respectueuses salutations.",
-  "Veuillez croire à mon meilleur souvenir.",
-  "Veuillez trouver ici l’assurance de mon amitié.",
-  "Amitiés.",
-  "Salutations distinguées.",
-  "Semper Fidelis.",
-  "Je vous prie de plésèfer, Madame, Monsieur, mes vrissèmes très croumibes.",
-  "Salutations cordiales.",
-  "Veuillez agréer, Madame, Monsieur, mes meilleures salutations.",
-  "Sportivement.",
-  "Vaccinalement.",
-  "Vers l'infini, et au-delà!",
-  "À la revoyure!",
-  "À bientôt, si c'est pas avant.",
-]; //array of greetings
 
 function materialColor() {
   // colors from https://github.com/egoist/color-lib/blob/master/color.json
