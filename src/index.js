@@ -6,6 +6,7 @@ import 'particles.js/particles.js'
 
 const { contrastColor } = require("contrast-color");
 const greetingsJSON = require("./data/greetings.json");
+const funniesJSON = require("./data/funnies.json");
 const API_KEY = require("/config");
 
 //call the particles.js library
@@ -15,45 +16,59 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
 
 //arrays ********************************************************************
 let greetings = [];
-for (let i = 0; i < greetingsJSON[0].length; i++) { 
-  greetings.push(greetingsJSON[0][i]);
+for (let i = 0; i < greetingsJSON.length; i++) { 
+  greetings.push(greetingsJSON[i]);
 }
 
-//fetch function to populate the list of greetings from googlesheets api and populate the greetings array
+let funnies = [];
+for (let i = 0; i < funniesJSON.length; i++) {
+  funnies.push(funniesJSON[i]);
+}
 
+
+//fetch function to populate the list of greetings from googlesheets api and populate the greetings array
 async function fetchFromSheet() {
-  const response = await fetch(
+  const response1 = await fetch(
     `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${SHEETS_API_KEY}`
   );
 
-  const data = await response.json(); //check if the sheet is not empty
+  const response2 = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet2?key=${SHEETS_API_KEY}`
+  );
 
-  if (data.values[0]) {
-    greetings = []; //data.values[0] is an array of the values in the first row of the sheet. populate the greetings array with the values
+  const data1 = await response1.json(); 
+  const data2 = await response2.json(); 
 
-    for (let i = 0; i < data.values[0].length; i++) {
-      greetings.push(data.values[0][i]);
+  //check if the sheet1 is not empty, then push values in array
+  if (data1.values[0]) {
+    greetings = []; //data1.values[0] is an array of the values in the first row of the sheet1. populate the greetings array with the values
+
+    for (let i = 0; i < data1.values[0].length; i++) {
+      greetings.push(data1.values[0][i]);
+    }
+  }
+
+  //check if the sheet2 is not empty, then push values in array
+  if (data2.values[0]) {
+    funnies = []; //data2.values[0] is an array of the values in the first row of the sheet2. populate the funnies array with the values
+
+    for (let i = 0; i < data2.values[0].length; i++) {
+      funnies.push(data2.values[0][i]);
     }
   }
 }
-fetchFromSheet();
 
 //calls *******************************************************************
-
-document
-  .getElementById("copy__button")
-  .addEventListener("click", copyToClipboard);
+fetchFromSheet();
+document.getElementById("copy__button").addEventListener("click", copyToClipboard);
 document.getElementById("shuffle__button").addEventListener("click", shuffle);
-document
-  .getElementById("shuffle__button")
-  .addEventListener("mouseover", rotate);
+document.getElementById("shuffle__button").addEventListener("mouseover", rotate);
 document.getElementById("about").addEventListener("click", toggleCard);
 document.getElementById("close__button").addEventListener("click", toggleCard);
 document.getElementById("switcher-1").addEventListener("click", toggleSnow);
 
 
 //functions ***************************************************************
-
 function toggleSnow() {
   let switcher = document.getElementById("switcher-1");
   let snow = document.getElementById("particles-js");
@@ -77,11 +92,22 @@ function shuffle() {
   //select random from the list of greetings
   let greeting;
   let temp;
-  temp = greeting;
-  greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  let type = document.getElementById("type").value;
+ 
+  switch(type){
+    case "greetings":
+      greeting = greetings[Math.floor(Math.random() * greetings.length)];
+      break;
+
+    case "funnies":
+      greeting = funnies[Math.floor(Math.random() * funnies.length)];
+      break;
+  }
+  
+  temp = document.getElementById("greeting").innerHTML;
 
   if (greeting == temp) {
-    shuffle();
+    return shuffle();
   }
 
   //display the greeting

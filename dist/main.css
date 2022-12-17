@@ -129,7 +129,7 @@ h1 {
     transition: transform 0.25s;
 }
 
-button {
+button, select {
   display:inline-block;
   padding:0.2em 0.6em;
   margin:0.1em;
@@ -146,6 +146,11 @@ button {
   position:relative;
   height: 2em;
 }
+
+button {
+  padding:0.2em 0.6em;
+}
+
 .card_wrapper{
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -195,7 +200,7 @@ card-button:hover{
 }
 
 .card {
-  max-height: 50%;
+  max-height: 60%;
   position: relative;
   padding: 3rem;
   background: #fff;
@@ -306,6 +311,7 @@ hr {
   z-index: 0;
 }
 
+/*-------------- Toggle button --------------*/
 body span.switcher {
   /* position: relative; */
   position: fixed;
@@ -406,13 +412,14 @@ body span.switcher.switcher-1 input:not(:checked) + label {
  }
 }
 
-@media screen and (min-width: 780px) {
+/*-------------- Media queries --------------*/
+@media screen and (min-width: 750px) {
   .header {
     font-size: 1.333rem;
   }
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 475px) {
   .buttons {
     font-size: .75rem;
   }
@@ -431,6 +438,29 @@ body span.switcher.switcher-1 input:not(:checked) + label {
     bottom: 2rem;
   }
 
+}
+
+@media screen and (max-width: 400px) {
+  .buttons {
+    font-size: .68rem;
+  }
+
+  .card{
+    max-height: 65%;
+    padding-top: 1.5rem;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+  .buttons {
+    font-size: .65rem;
+  }
+
+  .card{
+    max-height: 65%;
+    padding-top: 1.5rem;
+  }
 }
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/css/icomoon.css ***!
